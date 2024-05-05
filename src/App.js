@@ -3,6 +3,7 @@ import Home from "./component/Home/Home";
 import JobDescription from "./component/JobDescription/JobDescription";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+// Creating router configuration using createBrowserRouter
 const router = createBrowserRouter([
  
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     element: <JobDescription />,
   },
 ]);
+
 function App() {
   return (
     <div className="App min-w-[275px]">

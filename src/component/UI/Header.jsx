@@ -13,6 +13,7 @@ function Header() {
             <img src="./assets/desktop/logo.svg" alt="Logo-Devjobs" className=""></img>
           </div>
         </Link>
+        {/* Theme toggle button */}
         <div className="flex flex-row">
           <div className="theme-action-btn mr-6">
             <Brightness7Icon sx={{ color: "white" }} />

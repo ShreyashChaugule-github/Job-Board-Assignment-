@@ -1,8 +1,8 @@
 
 import SearchIcon from "@mui/icons-material/Search";
-
 import { useState } from "react";
 
+// Component for the search bar
 function SearchBar({ getUserInput }) {
   return (
     <div className="flex flex-col items-center h-20 bg-[#F4F6F8] dark:bg-[#121721]">
@@ -19,18 +19,22 @@ function SearchBar({ getUserInput }) {
 
 export default SearchBar;
 
+// Component for the search bar on small screens
 function SmallScreenSearchBar({ getUserInput }) {
   const [jobPosition, setJobPosition] = useState();
  
+  // Function to handle form submission
   function onSubmitHandler(e) {
     e.preventDefault();
     getUserInput(jobPosition);
   }
   return (
+    // Form for the search bar
     <form onSubmit={onSubmitHandler}>
       <div className="md:hidden w-[80Vw] max-w-sm min-w-[19rem] mt-[-2rem] rounded-lg bg-white py-3 px-3 drop-shadow-lg dark:bg-[#19202D] ">
         <div className="flex flex-row justify-between">
           <div className="relative w-full">
+            {/* Select dropdown for position */}
             <select
               className=" dark:bg-[#19202D] dark:text-white dark:placeholder-white border-none w-full py-2 pr-10 pl-2"
               onChange={(e) => setJobPosition(e.target.value)}
@@ -66,23 +70,27 @@ function SmallScreenSearchBar({ getUserInput }) {
   );
 }
 
+// Component for the search bar on large screens
 function LargeScreenSearchBar({ getUserInput }) {
+   // State variables for search filters
   const [searchPosition, setSearchPosition] = useState("");
   const [searchLocation, setSearchLocation] = useState("");
   const [searchExperience, setSearchExperience] = useState("");
   const [searchCompanyName, setSearchCompanyName] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
+  // Function to handle checkbox change
   function onCheckboxChangeHandler() {
     setIsChecked(!isChecked);
   }
-
+  // Function to handle form submission
   function userInputSubmitHandler(e) {
     e.preventDefault();
     getUserInput(searchPosition, searchLocation, isChecked, searchExperience, searchCompanyName);
   }
 
   return (
+     // Form for the search bar
     <form onSubmit={userInputSubmitHandler}>
       <div className="hidden w-[100%] min-w-fit mt-[-1rem] rounded-lg bg-white px-3 drop-shadow-lg dark:bg-[#19202D] md:flex flex-row justify-around">
         {/* Search by position */}

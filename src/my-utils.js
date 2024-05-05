@@ -1,9 +1,12 @@
 import initialJobData from "./data.json";
 import { useState } from "react";
 
+// Custom hook for filtering job data based on user input
 export const useGetUserFilterInput = () => {
+  // State variable to hold the filtered job list, initialized with the initial job data
   const [filterJobList, setFilterJobList] = useState(initialJobData);
 
+   // Copying the initial job data to a temporary variable for filtering
   function doFilter(filters) {
     let filteredList = initialJobData;
 
